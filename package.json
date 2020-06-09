@@ -12,7 +12,6 @@
     "clean": "rimraf bin",
     "grunt": "grunt",
     "build": "npm run clean && npm run grunt",
-    "postinstall": "npm run build",
     "prepublish": "npm run build"
   },
   "repository": {
