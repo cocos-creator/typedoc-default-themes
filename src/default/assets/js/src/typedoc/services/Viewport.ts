@@ -42,6 +42,7 @@ export class Viewport extends EventTarget {
      */
     secondaryNav: HTMLElement;
 
+    urlToolbar :HTMLDivElement;
 
     /**
      * Create new Viewport instance.
@@ -49,6 +50,7 @@ export class Viewport extends EventTarget {
     constructor() {
         super();
 
+        this.urlToolbar = <HTMLDivElement>document.querySelector('.tsd-url-toolbar');
         this.toolbar = <HTMLDivElement>document.querySelector('.tsd-page-toolbar');
         this.secondaryNav = <HTMLElement>document.querySelector('.tsd-navigation.secondary');
 
@@ -119,6 +121,7 @@ export class Viewport extends EventTarget {
         if (isShown !== this.showToolbar) {
             this.toolbar.classList.toggle('tsd-page-toolbar--hide');
             this.secondaryNav.classList.toggle('tsd-navigation--toolbar-hide');
+            this.toolbar.classList.toggle('.tsd-url-toolbar--hide');        
         }
         this.lastY = this.scrollTop;
     }
